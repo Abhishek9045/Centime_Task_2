@@ -81,11 +81,9 @@ class ColorControllerTest {
 
 		assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
 
-		// Assertions based on the structure of your response
 		List<NestedEntity> nestedEntities = responseEntity.getBody();
 		assertEquals(2, nestedEntities.size());
 
-		// Assuming the expected values, adjust these assertions accordingly
 		assertEquals("Entity1", nestedEntities.get(0).getName());
 		assertEquals("Color1", nestedEntities.get(0).getColor());
 
@@ -93,5 +91,4 @@ class ColorControllerTest {
 		assertEquals("Color2", nestedEntities.get(1).getColor());
 	}
 
-	// Add more test cases as needed for additional scenarios and edge cases
 }
