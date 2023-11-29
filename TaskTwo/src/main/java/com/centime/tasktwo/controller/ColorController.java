@@ -53,7 +53,8 @@ public class ColorController {
 		Map<Long, List<ColorEntity>> entityMap = entities.stream()
 				.collect(Collectors.groupingBy(ColorEntity::getParentId));
 
-		List<ColorEntity> topLevelEntities = entityMap.get(0L); // Assuming top-level entities have parentId 0
+		// Assuming top-level entities have parentId 0
+		List<ColorEntity> topLevelEntities = entityMap.get(0L); 
 
 		List<NestedEntity> result = topLevelEntities.stream().map(entity -> buildNestedEntity(entity, entityMap))
 				.collect(Collectors.toList());
